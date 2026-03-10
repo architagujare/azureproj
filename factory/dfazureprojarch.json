@@ -1,0 +1,9 @@
+{
+	"name": "dfazureprojarch",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9616631c-fc98-4fe6-879f-d3133db15c03",
+		"tenantId": "2922bee4-4bd9-48b7-8770-57cc6f80b2f4"
+	}
+}
