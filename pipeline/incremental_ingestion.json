@@ -5,8 +5,6 @@
 			{
 				"name": "AZURE SQL TO LAKE",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -18,10 +16,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": {
-							"value": "select * from @{pipeline().parameters.schema}.@{pipeline().parameters.table} where  @{pipeline().parameters.cdc_col}",
-							"type": "Expression"
-						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -66,7 +60,8 @@
 							"folder": "cdc",
 							"file": "cdc.json"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
